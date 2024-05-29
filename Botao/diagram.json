@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "author": "Renata Gomes",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "board-esp32-devkit-c-v4",
+      "id": "esp",
+      "top": 0,
+      "left": -4.76,
+      "rotate": 270,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-pushbutton-6mm",
+      "id": "btn1",
+      "top": -8.3,
+      "left": 54.9,
+      "rotate": 270,
+      "attrs": { "color": "blue" }
+    },
+    { "type": "wokwi-led", "id": "led1", "top": -42, "left": -15.4, "attrs": { "color": "blue" } }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "btn1:1.l", "esp:GND.3", "black", [ "h-31.5", "v33.44" ] ],
+    [ "btn1:2.r", "esp:0", "green", [ "h16.9", "v61.44" ] ],
+    [ "led1:A", "esp:21", "green", [ "h9.6", "v58.74" ] ],
+    [ "esp:GND.2", "led1:C", "black", [ "v0" ] ]
+  ],
+  "dependencies": {}
+}
